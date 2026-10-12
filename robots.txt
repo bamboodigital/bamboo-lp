@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clinicas.bamboo-digital.pt/sitemap.xml

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Termos e Condições Bamboo Digital</title>
+<meta name="description" content="Termos e Condições da Bamboo Digital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Raleway:wght@400;500;600;700&display=swap">
+<style>
+  /* LAYOUT: one reading column on paper, a sticky contents rail on wide screens; navy brand ink, yellow only on marks */
+  :root{
+    --bg:#E7E4DA; --surface:#EFEDE6; --ink:#0E1A4A; --fg:#1a2240; --muted:#4a5072;
+    --line:rgba(14,26,74,.16); --accent:#1831D6; --mark:#F7C600;
+    --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    --body:"Raleway",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+    --bg:#0E1A4A; --surface:#16245c; --ink:#F3F2EC; --fg:#e4e6f0; --muted:#b9c0e0;
+    --line:rgba(255,255,255,.16); --accent:#9fb0ff; --mark:#F7C600; color-scheme:dark}}
+  :root[data-theme="dark"]{
+    --bg:#0E1A4A; --surface:#16245c; --ink:#F3F2EC; --fg:#e4e6f0; --muted:#b9c0e0;
+    --line:rgba(255,255,255,.16); --accent:#9fb0ff; --mark:#F7C600; color-scheme:dark}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .page{max-width:1120px;margin-inline:auto;padding-inline:clamp(16px,5vw,48px);padding-block:0 72px}
+  a{color:var(--accent);text-underline-offset:3px}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--mark);outline-offset:2px;border-radius:3px}
+
+  header.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:22px;border-bottom:1px solid var(--line)}
+  .brand{display:inline-flex;align-items:center;gap:.5rem;color:var(--ink);text-decoration:none}
+  .brand svg{width:24px;height:28px}
+  .brand .stem{stroke:var(--ink)} .brand .leaf{fill:var(--mark)}
+  .brand span{font-family:var(--display);font-size:1.55rem;font-weight:600;line-height:1}
+  .brand-logo{height:30px;width:auto;display:block}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brand-logo{filter:brightness(0) invert(1)}}
+  :root[data-theme="dark"] .brand-logo{filter:brightness(0) invert(1)}
+  .top nav{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .top nav a{color:var(--ink);text-decoration:none}
+  .top nav a:hover{color:var(--accent)}
+
+  .intro{padding-block:clamp(40px,7vw,72px) 8px;max-width:760px}
+  .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 .9rem}
+  h1,h2,h3{text-wrap:balance;color:var(--ink);margin:0}
+  h1{font-family:var(--display);font-weight:500;font-size:clamp(2.5rem,6vw,4rem);line-height:1.04}
+  .intro p{color:var(--muted);font-size:1.08rem;margin:1rem 0 0;max-width:62ch}
+
+  .id-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:2rem;max-width:760px}
+  .id-card div{background:var(--surface);padding:.9rem 1.1rem;min-width:0}
+  .id-card dt{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .id-card dd{margin:.2rem 0 0;font-weight:600;color:var(--ink);overflow-wrap:anywhere;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+  .copy{font:600 .72rem var(--body);letter-spacing:.06em;text-transform:uppercase;background:transparent;color:var(--accent);border:1px solid var(--line);border-radius:4px;padding:.2em .55em;cursor:pointer}
+
+  .doc{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(24px,5vw,64px);padding-top:clamp(40px,6vw,64px)}
+  @media(max-width:860px){.doc{grid-template-columns:1fr}.toc{display:none}}
+  .toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;font-size:.88rem}
+  .toc p{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 .7rem}
+  .toc ol{list-style:none;margin:0;padding:0;display:grid;gap:.35rem;counter-reset:t}
+  .toc li{counter-increment:t}
+  .toc a{color:var(--fg);text-decoration:none;display:flex;gap:.55rem}
+  .toc a::before{content:counter(t);color:var(--accent);font-variant-numeric:tabular-nums;min-width:1.2em;font-weight:700}
+  .toc a:hover{color:var(--accent)}
+
+  .doc-head h1{font-family:var(--display);font-weight:500;font-size:clamp(2.3rem,5vw,3.4rem);line-height:1.06}
+  .who{font-size:.9rem;color:var(--muted);margin:.35rem 0 0}
+  .updated{font-size:.88rem;color:var(--muted);margin:.6rem 0 0}
+  .summary{margin:1.8rem 0 0;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--mark);border-radius:4px;padding:1.2rem 1.4rem;max-width:68ch}
+  .summary h3{font-family:var(--display);font-size:1.35rem;font-weight:600;margin-bottom:.5rem}
+  .summary ul{margin:0;padding-left:1.1rem;display:grid;gap:.35rem}
+
+  .clauses{counter-reset:c;max-width:68ch}
+  section.clause{counter-increment:c;padding-top:2.4rem;scroll-margin-top:24px}
+  section.clause h3{font-size:1.12rem;font-weight:700;display:flex;gap:.7rem;align-items:baseline}
+  section.clause h3::before{content:counter(c);font-family:var(--display);font-size:1.5rem;font-weight:600;color:var(--accent);min-width:1.3rem;font-variant-numeric:tabular-nums}
+  .clause p,.clause ul{margin:.75rem 0 0}
+  .clause ul{padding-left:1.15rem;display:grid;gap:.4rem}
+  .clause strong{color:var(--ink)}
+
+  .table-wrap{overflow-x:auto;margin-top:1rem;border:1px solid var(--line);border-radius:6px}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem;background:var(--surface)}
+  th,td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  tr:last-child td{border-bottom:0}
+  td code{font-size:.86rem;color:var(--ink)}
+
+  footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;justify-content:space-between}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  html{scroll-behavior:smooth}
+</style>
+<link rel="canonical" href="https://clinicas.bamboo-digital.pt/termos-e-condicoes.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <span class="brand" aria-label="Bamboo Digital">
+      <img class="brand-logo" src="logo.png" alt="Bamboo Digital" width="700" height="250">
+    </span>
+    <nav aria-label="Outros documentos"><a href="politica-de-privacidade.html">Política de Privacidade</a></nav>
+  </header>
+
+  <article class="doc" id="termos">
+    <aside class="toc" aria-label="Índice dos termos e condições">
+      <p>Termos e Condições</p>
+      <ol>
+        <li><a href="#t-ambito">Âmbito</a></li>
+        <li><a href="#t-propostas">Propostas e preços</a></li>
+        <li><a href="#t-duracao">Duração e cancelamento</a></li>
+        <li><a href="#t-pagamentos">Pagamentos</a></li>
+        <li><a href="#t-cliente">O que fica com a clínica</a></li>
+        <li><a href="#t-resultados">Resultados</a></li>
+        <li><a href="#t-conteudos">Conteúdos e direitos</a></li>
+        <li><a href="#t-confidencialidade">Confidencialidade</a></li>
+        <li><a href="#t-responsabilidade">Responsabilidade</a></li>
+        <li><a href="#t-lei">Lei e litígios</a></li>
+        <li><a href="#t-alteracoes">Alterações</a></li>
+      </ol>
+    </aside>
+    <div>
+      <div class="doc-head">
+        <h1>Termos e Condições</h1>
+        <p class="who">Bamboo Digital de Janine Pereira Tavares · NIF 237 099 705 · Marinha Grande · info@bamboo-digital.pt</p>
+        <p class="updated">Última actualização: 12 de Outubro de 2026</p>
+      </div>
+
+      <div class="summary">
+        <h3>Em resumo</h3>
+        <ul>
+          <li>Cada clínica recebe uma proposta à medida, apresentada em reunião.</li>
+          <li>Os contratos têm uma duração mínima de 3 meses e renovam-se automaticamente; para cancelar, avisa com 30 dias de antecedência.</li>
+          <li>O investimento em anúncios é pago à parte, directamente às plataformas.</li>
+          <li>Trabalhamos para trazer mais visibilidade e contactos, mas não garantimos resultados.</li>
+        </ul>
+      </div>
+
+      <div class="clauses">
+        <section class="clause" id="t-ambito">
+          <h3>Âmbito</h3>
+          <p>Estes termos regulam os serviços de marketing digital prestados pela <strong>Bamboo Digital de Janine Pereira Tavares</strong> (adiante, Bamboo Digital) a clínicas e profissionais de saúde e bem-estar (adiante, cliente). Ao aceitar uma proposta, o cliente aceita estes termos. O que estiver escrito na proposta aceite prevalece sobre estes termos em caso de diferença.</p>
+        </section>
+
+        <section class="clause" id="t-propostas">
+          <h3>Propostas e preços</h3>
+          <p>Os valores são apresentados em reunião e ajustados a cada clínica. Cada proposta descreve os serviços incluídos, o preço e a periodicidade. O investimento em anúncios (Meta e Google) não está incluído no preço dos serviços e é pago pelo cliente directamente às plataformas.</p>
+          <p>Aos preços acresce IVA à taxa legal em vigor.</p>
+        </section>
+
+        <section class="clause" id="t-duracao">
+          <h3>Duração e cancelamento</h3>
+          <ul>
+            <li>Os contratos recorrentes têm uma duração mínima de 3 meses e renovam-se automaticamente por iguais períodos.</li>
+            <li>O cliente pode cancelar por escrito, para <strong>info@bamboo-digital.pt</strong>, com pelo menos 30 dias de antecedência em relação ao fim do período em curso.</li>
+            <li>Os serviços prestados até à data de cancelamento são sempre devidos.</li>
+          </ul>
+        </section>
+
+        <section class="clause" id="t-pagamentos">
+          <h3>Pagamentos</h3>
+          <ul>
+            <li>Os pagamentos são feitos por transferência bancária ou MB WAY, com envio do comprovativo por email.</li>
+            <li>Atrasos superiores a 3 dias úteis vencem juros de mora à taxa legal em vigor.</li>
+            <li>Atrasos superiores a 5 dias úteis permitem à Bamboo Digital suspender os serviços ou resolver o contrato.</li>
+          </ul>
+        </section>
+
+        <section class="clause" id="t-cliente">
+          <h3>O que fica com a clínica</h3>
+          <ul>
+            <li>Dar acesso às contas e à informação necessária, e aprovar os conteúdos dentro dos prazos combinados.</li>
+            <li>Garantir que a informação clínica, os serviços e as habilitações profissionais comunicados são verdadeiros e actuais.</li>
+            <li>Responder às mensagens, chamadas e comentários de pacientes, que podem conter dados de saúde.</li>
+            <li>Partilhar o número de marcações fechadas, para que o relatório trimestral possa ligar contactos a resultados.</li>
+          </ul>
+          <p>A Bamboo Digital prepara os conteúdos tendo em conta as regras da Entidade Reguladora da Saúde e os códigos deontológicos aplicáveis, mas a aprovação final de cada conteúdo é sempre do cliente.</p>
+        </section>
+
+        <section class="clause" id="t-resultados">
+          <h3>Resultados</h3>
+          <p>O trabalho é desenhado para aumentar a visibilidade, o reconhecimento e os contactos da clínica, e os resultados são medidos e partilhados com o cliente. Em saúde, ninguém deve garantir números, e a Bamboo Digital não garante um número de contactos ou de marcações.</p>
+        </section>
+
+        <section class="clause" id="t-conteudos">
+          <h3>Conteúdos e direitos</h3>
+          <p>Fotografias, vídeos e textos produzidos para o cliente podem ser usados por ele livremente nos seus canais depois de pagos na íntegra. A Bamboo Digital pode mostrar trabalhos no seu portefólio, salvo se o cliente pedir o contrário por escrito. Templates, métodos e ferramentas internas continuam a ser da Bamboo Digital.</p>
+        </section>
+
+        <section class="clause" id="t-confidencialidade">
+          <h3>Confidencialidade</h3>
+          <p>Toda a informação do cliente é tratada como confidencial. As cópias de segurança de documentos do cliente são guardadas por um máximo de 1 ano após o fim do contrato. O tratamento de dados pessoais segue a <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
+        </section>
+
+        <section class="clause" id="t-responsabilidade">
+          <h3>Responsabilidade</h3>
+          <p>A Bamboo Digital não responde por danos indirectos ou lucros cessantes, por falhas ou alterações de plataformas de terceiros (como Meta, Google ou alojamento), nem por informação incorrecta fornecida pelo cliente. Também não é responsável pelo conteúdo de sites de terceiros para os quais existam links.</p>
+        </section>
+
+        <section class="clause" id="t-lei">
+          <h3>Lei e litígios</h3>
+          <p>Estes termos regem-se pela lei portuguesa. Qualquer reclamação pode ser enviada para <strong>info@bamboo-digital.pt</strong>, e faremos o possível por resolvê-la a bem. Não sendo possível, é competente o foro da comarca de Leiria.</p>
+        </section>
+
+        <section class="clause" id="t-alteracoes">
+          <h3>Alterações</h3>
+          <p>Estes termos podem ser actualizados. As alterações aplicam-se aos contratos em curso a partir da renovação seguinte, depois de comunicadas ao cliente.</p>
+        </section>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <span>Bamboo Digital de Janine Pereira Tavares · NIF 237 099 705 · Marinha Grande</span>
+    <span>info@bamboo-digital.pt</span>
+  </footer>
+</div>
+</body>
+</html>
