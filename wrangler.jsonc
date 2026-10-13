@@ -3,5 +3,8 @@
   "compatibility_date": "2024-11-01",
   "assets": {
     "directory": "./public"
-  }
+  },
+  "routes": [
+    { "pattern": "clinicas.bamboo-digital.pt", "custom_domain": true }
+  ]
 }
