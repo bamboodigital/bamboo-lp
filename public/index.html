@@ -487,7 +487,7 @@
   /* IDs de medicao: ligados ao consentimento do banner */
   var BAMBOO_CLARITY_ID='yx0u2xnkld';
   var BAMBOO_GA4_ID='';
-  var BAMBOO_PIXEL_ID='';
+  var BAMBOO_PIXEL_ID='1088613253707884';
   window.__bbLoaded={clarity:false,ga:false,pixel:false};
   window.bambooLoadAnalytics=function(c){
     if(!c)return;
@@ -905,6 +905,7 @@
         .then(function(d){
           if(d&&d.success){
             document.getElementById('okmsg').style.display='block';
+            try{if(window.fbq){fbq('track','Lead');}}catch(_){}
             try{f.reset();}catch(_){}
           }else{
             btn.disabled=false;
