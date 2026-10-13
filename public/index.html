@@ -29,6 +29,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap">
 <style>
+  /* The Seasons — fonte da marca (títulos) */
+  @font-face{font-family:"The Seasons";src:url("fonts/theseasons-reg.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"The Seasons";src:url("fonts/theseasons-it.otf") format("opentype");font-weight:400;font-style:italic;font-display:swap;}
+  @font-face{font-family:"The Seasons";src:url("fonts/theseasons-lt.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap;}
+  @font-face{font-family:"The Seasons";src:url("fonts/theseasons-ltit.otf") format("opentype");font-weight:300;font-style:italic;font-display:swap;}
+  @font-face{font-family:"The Seasons";src:url("fonts/theseasons-bd.otf") format("opentype");font-weight:500 700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"The Seasons";src:url("fonts/theseasons-bdit.otf") format("opentype");font-weight:500 700;font-style:italic;font-display:swap;}
   /* LAYOUT: editorial vertical scroll — alternating "cru" (paper) and "navy" bands; The Seasons→Cormorant display, Raleway body, Caveat handwriting; bold yellow only on CTAs + data */
   :root{
     --cru:#E7E4DA;            /* paper ground */
@@ -52,7 +59,7 @@
     font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-  .display{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;}
+  .display{font-family:"The Seasons","Cormorant Garamond",Georgia,"Times New Roman",serif;}
   .hand{font-family:"Caveat",cursive;}
 
   /* ---- shared layout ---- */
@@ -152,7 +159,7 @@
   }
   .pill .d{color:var(--yellow);font-weight:800;}
   .counter{text-align:center;}
-  .counter .n{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(3rem,8vw,5rem);color:var(--yellow);line-height:1;}
+  .counter .n{font-family:"The Seasons","Cormorant Garamond",serif;font-weight:600;font-size:clamp(3rem,8vw,5rem);color:var(--yellow);line-height:1;}
   .counter .n small{font-size:.5em;}
 
   /* ---- problem list ---- */
@@ -168,7 +175,7 @@
   .prob-card p{font-size:.98rem;color:var(--fg-soft);}
   .band--navy .prob-card p{color:var(--on-navy-soft);}
 
-  .q-emph{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.4rem,3vw,2rem);color:var(--navy-ink);line-height:1.3;}
+  .q-emph{font-family:"The Seasons","Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.4rem,3vw,2rem);color:var(--navy-ink);line-height:1.3;}
   .band--navy .q-emph{color:var(--on-navy);}
 
   /* ---- system pieces ---- */
@@ -178,12 +185,12 @@
     position:relative;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.2);
     border-radius:5px;padding:1.6rem 1.5rem;
   }
-  .piece .num{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:600;color:var(--yellow);letter-spacing:.05em;}
+  .piece .num{font-family:"The Seasons","Cormorant Garamond",serif;font-size:1.1rem;font-weight:600;color:var(--yellow);letter-spacing:.05em;}
   .piece h3{font-size:1.22rem;font-weight:700;color:var(--on-navy);margin:.3rem 0 .55rem;}
   .piece p{font-size:.97rem;color:var(--on-navy-soft);}
   .together{
     margin-top:2.6rem;text-align:center;
-    font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;
+    font-family:"The Seasons","Cormorant Garamond",serif;font-style:italic;font-weight:500;
     font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.25;color:var(--on-navy);
   }
   .together b{color:var(--yellow);font-style:normal;font-weight:600;}
@@ -197,7 +204,7 @@
   .results-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,54px);align-items:start;}
   @media(max-width:860px){.results-grid{grid-template-columns:1fr;}}
   .wa-wrap{margin-top:0;}
-  .wa-intro{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.15rem,2.2vw,1.45rem);color:var(--navy-ink);margin-bottom:1.1rem;}
+  .wa-intro{font-family:"The Seasons","Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.15rem,2.2vw,1.45rem);color:var(--navy-ink);margin-bottom:1.1rem;}
   .wa-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:255px;margin-inline:auto;}
   @media(max-width:860px){.wa-grid{max-width:300px;margin-inline:0;}}
   .wa-card{margin:0;background:#fff;border-radius:14px;padding:11px;box-shadow:0 14px 32px rgba(14,26,74,.14);transform:rotate(-1.2deg);}
@@ -211,11 +218,11 @@
     border:2px solid var(--navy-ink);box-shadow:8px 8px 0 var(--blue);
   }
   .report-card .rc-h{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.8rem;margin-bottom:1rem;}
-  .report-card .rc-h b{font-family:"Cormorant Garamond",serif;font-size:1.3rem;color:var(--yellow);}
+  .report-card .rc-h b{font-family:"The Seasons","Cormorant Garamond",serif;font-size:1.3rem;color:var(--yellow);}
   .report-card .rc-h span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-navy-soft);}
   .metric{display:flex;justify-content:space-between;align-items:center;padding:.62rem 0;border-bottom:1px dashed rgba(255,255,255,.14);font-size:.95rem;}
   .metric:last-child{border-bottom:0;}
-  .metric .v{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.35rem;color:#fff;font-variant-numeric:tabular-nums;}
+  .metric .v{font-family:"The Seasons","Cormorant Garamond",serif;font-weight:600;font-size:1.35rem;color:#fff;font-variant-numeric:tabular-nums;}
   .metric .v.up{color:var(--yellow);}
   .rc-foot{margin-top:1rem;font-size:.76rem;color:var(--on-navy-soft);font-style:italic;}
   /* report chart */
@@ -244,7 +251,7 @@
   .step .sn{
     counter-increment:s;width:2.5rem;height:2.5rem;flex:none;border-radius:50%;
     display:grid;place-items:center;background:var(--navy);color:var(--yellow);
-    font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:600;
+    font-family:"The Seasons","Cormorant Garamond",serif;font-size:1.3rem;font-weight:600;
   }
   .step .sn::before{content:counter(s);}
   .step h3{font-size:1.05rem;font-weight:700;color:var(--navy-ink);}
@@ -274,7 +281,7 @@
   .loopbar .lp-ic{color:var(--blue);font-size:1.4rem;font-weight:800;flex:none;line-height:1;}
   .loopbar b{color:var(--navy-ink);}
   .split-head{text-align:center;margin-top:3.2rem;padding-top:2.4rem;border-top:1px solid rgba(14,26,74,.1);}
-  .split-head h3{font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-weight:600;color:var(--navy-ink);}
+  .split-head h3{font-family:"The Seasons","Cormorant Garamond",serif;font-size:1.6rem;font-weight:600;color:var(--navy-ink);}
   .split-head p{font-size:1rem;color:var(--fg-soft);max-width:52ch;margin:.5rem auto 0;}
   @media(max-width:760px){.flow2{flex-wrap:wrap;gap:.5rem;}.fcard{flex:1 1 44%;}.fchev{display:none;}}
   @media(max-width:460px){.fcard{flex:1 1 100%;}}
@@ -309,8 +316,8 @@
     background:var(--cru);border:2px solid var(--navy-ink);border-radius:6px;padding:1.8rem;
     box-shadow:6px 6px 0 var(--blue);max-width:760px;margin-inline:auto;
   }
-  .quote .qm{font-family:"Cormorant Garamond",serif;font-size:3rem;color:var(--blue);line-height:.6;}
-  .quote blockquote{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.35;color:var(--navy-ink);font-weight:500;}
+  .quote .qm{font-family:"The Seasons","Cormorant Garamond",serif;font-size:3rem;color:var(--blue);line-height:.6;}
+  .quote blockquote{margin:0;font-family:"The Seasons","Cormorant Garamond",serif;font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.35;color:var(--navy-ink);font-weight:500;}
   .quote .who{margin-top:1.1rem;font-size:.95rem;font-weight:700;color:var(--blue);}
   .quote .who small{display:block;font-weight:500;color:var(--fg-soft);letter-spacing:.02em;}
   .more-q{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:760px;margin:1.2rem auto 0;}
@@ -340,13 +347,13 @@
   details[open]{border-color:var(--blue);}
   summary{list-style:none;cursor:pointer;padding:1.1rem 0;font-weight:700;font-size:1.05rem;color:var(--navy-ink);display:flex;justify-content:space-between;align-items:center;gap:1rem;}
   summary::-webkit-details-marker{display:none;}
-  summary::after{content:"+";font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:var(--blue);flex:none;line-height:1;}
+  summary::after{content:"+";font-family:"The Seasons","Cormorant Garamond",serif;font-size:1.6rem;color:var(--blue);flex:none;line-height:1;}
   details[open] summary::after{content:"–";}
   details p{padding:0 0 1.2rem;color:var(--fg-soft);font-size:.98rem;line-height:1.6;}
 
   /* ---- footer ---- */
   .foot{background:var(--navy);color:var(--on-navy-soft);text-align:center;padding:2.6rem 1rem;}
-  .foot .logo{font-family:"Cormorant Garamond",serif;font-size:2rem;color:var(--on-navy);}
+  .foot .logo{font-family:"The Seasons","Cormorant Garamond",serif;font-size:2rem;color:var(--on-navy);}
   .foot .logo .sprout{color:var(--yellow);}
   .foot .logo .foot-logo{height:40px;width:auto;display:inline-block;filter:brightness(0) invert(1);}
   .foot small{display:block;margin-top:.8rem;font-size:.8rem;letter-spacing:.04em;}
@@ -375,7 +382,7 @@
   .band--navy .hbox h3{color:var(--yellow);}
   .hbox p{font-size:.98rem;color:var(--fg-soft);}
   .band--navy .hbox p{color:var(--on-navy-soft);}
-  .hbox .num{display:block;font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:600;color:var(--blue);margin-bottom:.2rem;}
+  .hbox .num{display:block;font-family:"The Seasons","Cormorant Garamond",serif;font-size:1.5rem;font-weight:600;color:var(--blue);margin-bottom:.2rem;}
   .band--navy .hbox .num{color:var(--yellow);}
 
   /* torn crumpled-paper box (grey) */
@@ -385,7 +392,7 @@
   .paperbox h3{font-size:1.2rem;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:var(--navy-ink);margin-bottom:.7rem;}
   .paperbox p{font-size:1.02rem;color:#3a4064;line-height:1.5;}
   .paperbox p b{color:var(--navy-ink);}
-  .num--badge{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:var(--navy);color:#fff;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.55rem;font-weight:600;margin-bottom:.9rem;border-radius:46% 54% 52% 48% / 54% 46% 56% 44%;box-shadow:0 0 0 3px var(--yellow);}
+  .num--badge{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:var(--navy);color:#fff;font-family:"The Seasons","Cormorant Garamond",serif;font-style:italic;font-size:1.55rem;font-weight:600;margin-bottom:.9rem;border-radius:46% 54% 52% 48% / 54% 46% 56% 44%;box-shadow:0 0 0 3px var(--yellow);}
   .sketchlist{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;}
   .sketchlist li{position:relative;padding-left:1.5em;font-size:1.08rem;line-height:1.55;color:var(--fg);}
   .band--navy .sketchlist li{color:var(--on-navy);}
@@ -456,7 +463,7 @@
   .rev img{display:block;width:100%;height:auto;border-radius:9px;}
   .rev-note{margin-top:1.5rem;font-size:.9rem;color:var(--fg-soft);text-align:center;}
   .forwho{border-left:3px solid var(--yellow);padding:.35rem 0 .35rem 1.1rem;margin:1.2rem 0 .4rem;max-width:62ch;}
-  .forwho p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.35;color:var(--on-navy);}
+  .forwho p{font-family:"The Seasons","Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.35;color:var(--on-navy);}
 
   /* ---- cookie consent ---- */
   [hidden]{display:none!important}
@@ -464,7 +471,7 @@
   .cookie{position:fixed;left:0;right:0;bottom:0;z-index:9999;display:flex;justify-content:center;padding:clamp(10px,2vw,20px);pointer-events:none}
   .cookie[hidden]{display:none}
   .cookie-card{pointer-events:auto;background:var(--navy);color:var(--on-navy);max-width:560px;width:100%;border-radius:12px;padding:1.3rem 1.4rem;box-shadow:0 18px 50px rgba(14,26,74,.4);border:1px solid rgba(255,255,255,.12)}
-  .cookie-card h2{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:600;color:var(--on-navy);margin:0 0 .4rem}
+  .cookie-card h2{font-family:"The Seasons","Cormorant Garamond",serif;font-size:1.4rem;font-weight:600;color:var(--on-navy);margin:0 0 .4rem}
   .cookie-card p{font-size:.92rem;color:var(--on-navy-soft);margin:0 0 .9rem;line-height:1.55}
   .cookie-card a{color:var(--yellow);text-underline-offset:2px}
   .cookie-actions{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
@@ -796,7 +803,7 @@
         <div class="polaroid p1 nocap"><img class="ph" src="team-videografo.jpg" alt="Captação de vídeo numa clínica" style="aspect-ratio:3/4;object-position:center 42%;"></div>
         <div class="polaroid p2 nocap"><img class="ph" src="team-rececao.jpg" alt="Receção de uma clínica" style="aspect-ratio:3/4;object-position:58% 36%;"></div>
         <div class="polaroid p3 nocap"><img class="ph" src="team-amanda.jpg" alt="Equipa da Bamboo" style="aspect-ratio:3/4;object-position:center 22%;"></div>
-        <div class="polaroid p4 nocap"><img class="ph" src="team-janine.jpg" alt="Janine, da Bamboo Digital" style="aspect-ratio:3/4;object-position:center 26%;"></div>
+        <div class="polaroid p4 nocap"><img class="ph" src="team-janine-camera.jpg" alt="Janine, da Bamboo Digital, com a câmara" style="aspect-ratio:3/4;object-position:center 18%;"></div>
       </div>
     </div>
   </div>
