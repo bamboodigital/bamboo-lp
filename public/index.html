@@ -434,7 +434,7 @@
   .marquee{position:relative;width:100%;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
   .marquee-track{display:flex;align-items:center;gap:clamp(1.6rem,3.5vw,3rem);width:max-content;animation:marquee 44s linear infinite;}
   .marquee:hover .marquee-track{animation-play-state:paused;}
-  @media(max-width:760px){.marquee-track{animation-duration:20s;}}
+  @media(max-width:760px){.marquee-track{animation-duration:13s;}}
   .marquee .ll{height:54px;width:auto;object-fit:contain;opacity:.72;transition:opacity .2s ease;flex:none;}
   .marquee .ll.big{height:80px;}
   .marquee .ll.small{height:42px;}
@@ -478,6 +478,22 @@
   .ck-row label{font-size:.9rem;color:var(--on-navy);font-weight:600}
   .ck-row p{font-size:.8rem;color:var(--on-navy-soft);margin:.15rem 0 0}
   .ck-row input:disabled{opacity:.6}
+  /* ---- refinamentos de design (2026-10-13) ---- */
+  .showcase{margin:clamp(2rem,5vw,3.4rem) auto 0;max-width:780px;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(14,26,74,.18);}
+  .showcase img{display:block;width:100%;height:auto;object-fit:cover;filter:saturate(1.1) contrast(1.02) brightness(1.02) sepia(.2);}
+  .showcase .cap{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--blue);text-align:center;}
+  .showcase figcaption{background:#fff;text-align:center;padding:.5rem;font-family:"Caveat",cursive;font-size:1.3rem;color:#12204d;}
+  .band--navy .showcase{box-shadow:0 20px 50px rgba(0,0,0,.35);}
+  .t-short{display:none;}
+  @media(max-width:560px){
+    .cta{font-size:.9rem;padding:.72em 1.1em;gap:.35em;}
+    .harrow{font-size:1.1rem;}
+    .t-full{display:none;}
+    .t-short{display:inline;}
+    .cta-row{margin-top:1.8rem;}
+  }
+  /* foto "a clínica" no hero: vertical no mobile */
+  @media(max-width:760px){.collage .p2 img.ph{aspect-ratio:3/4 !important;object-position:center 50% !important;}}
 </style>
 
 <script>
@@ -528,7 +544,7 @@
         <h1 class="h-xl display">A tua clínica a crescer com estratégia, e tu de volta ao <span class="uline">gabinete</span>.</h1>
         <p class="lead">Vídeo e fotografia, redes, anúncios e Google numa só mão, pensados por quem só trabalha com clínicas. Trazemos-te visibilidade e pedidos de marcação, e tu ficas com tempo para gerir e voltar ao gabinete.</p>
         <div>
-          <a class="cta" href="#falar">Quero perceber o que falta à minha clínica <span class="harrow">↓</span></a>
+          <a class="cta" href="#falar"><span class="t-full">Quero perceber o que falta à minha clínica</span><span class="t-short">O que falta à minha clínica</span> <span class="harrow">↓</span></a>
         </div>
         <div class="trust">
           <span><i class="tick">✓</i> +30 clínicas e profissionais de saúde</span>
@@ -566,26 +582,26 @@
   </div>
   <div class="marquee" aria-label="Logótipos de clientes da Bamboo">
     <div class="marquee-track">
-      <img class="ll small" src="asset-vitamove.png" alt="VitaMove" loading="lazy">
-      <img class="ll" src="asset-escola-saude-integral-da-mulher.png" alt="Escola Saúde Integral da Mulher" loading="lazy">
-      <img class="ll" src="asset-beleaf.png" alt="Beleaf" loading="lazy">
-      <img class="ll" src="asset-clinica-greatessence.png" alt="Clínica GreatEssence" loading="lazy">
-      <img class="ll" src="asset-maider.png" alt="Maider" loading="lazy">
-      <img class="ll" src="asset-born-to-be-mom.png" alt="Born to be Mom" loading="lazy">
-      <img class="ll" src="asset-mindfeed.png" alt="Mindfeed" loading="lazy">
-      <img class="ll" src="asset-teresa-painhas.png" alt="Teresa Paínhas" loading="lazy">
-      <img class="ll" src="asset-centro-medico-do-cartaxo.png" alt="Centro Médico do Cartaxo" loading="lazy">
-      <img class="ll big" src="asset-corpus-tempo.png" alt="Corpus Tempo" loading="lazy">
-      <img class="ll small" src="asset-vitamove.png" alt="VitaMove" loading="lazy">
-      <img class="ll" src="asset-escola-saude-integral-da-mulher.png" alt="Escola Saúde Integral da Mulher" loading="lazy">
-      <img class="ll" src="asset-beleaf.png" alt="Beleaf" loading="lazy">
-      <img class="ll" src="asset-clinica-greatessence.png" alt="Clínica GreatEssence" loading="lazy">
-      <img class="ll" src="asset-maider.png" alt="Maider" loading="lazy">
-      <img class="ll" src="asset-born-to-be-mom.png" alt="Born to be Mom" loading="lazy">
-      <img class="ll" src="asset-mindfeed.png" alt="Mindfeed" loading="lazy">
-      <img class="ll" src="asset-teresa-painhas.png" alt="Teresa Paínhas" loading="lazy">
-      <img class="ll" src="asset-centro-medico-do-cartaxo.png" alt="Centro Médico do Cartaxo" loading="lazy">
-      <img class="ll big" src="asset-corpus-tempo.png" alt="Corpus Tempo" loading="lazy">
+      <img class="ll small" src="asset-vitamove.png" alt="VitaMove">
+      <img class="ll" src="asset-escola-saude-integral-da-mulher.png" alt="Escola Saúde Integral da Mulher">
+      <img class="ll" src="asset-beleaf.png" alt="Beleaf">
+      <img class="ll" src="asset-clinica-greatessence.png" alt="Clínica GreatEssence">
+      <img class="ll" src="asset-maider.png" alt="Maider">
+      <img class="ll" src="asset-born-to-be-mom.png" alt="Born to be Mom">
+      <img class="ll" src="asset-mindfeed.png" alt="Mindfeed">
+      <img class="ll" src="asset-teresa-painhas.png" alt="Teresa Paínhas">
+      <img class="ll" src="asset-centro-medico-do-cartaxo.png" alt="Centro Médico do Cartaxo">
+      <img class="ll big" src="asset-corpus-tempo.png" alt="Corpus Tempo">
+      <img class="ll small" src="asset-vitamove.png" alt="VitaMove">
+      <img class="ll" src="asset-escola-saude-integral-da-mulher.png" alt="Escola Saúde Integral da Mulher">
+      <img class="ll" src="asset-beleaf.png" alt="Beleaf">
+      <img class="ll" src="asset-clinica-greatessence.png" alt="Clínica GreatEssence">
+      <img class="ll" src="asset-maider.png" alt="Maider">
+      <img class="ll" src="asset-born-to-be-mom.png" alt="Born to be Mom">
+      <img class="ll" src="asset-mindfeed.png" alt="Mindfeed">
+      <img class="ll" src="asset-teresa-painhas.png" alt="Teresa Paínhas">
+      <img class="ll" src="asset-centro-medico-do-cartaxo.png" alt="Centro Médico do Cartaxo">
+      <img class="ll big" src="asset-corpus-tempo.png" alt="Corpus Tempo">
     </div>
   </div>
 </section>
@@ -617,6 +633,7 @@
         <p>No Instagram parece uma clínica, nos anúncios outra, no Google outra. Quem procura não reconhece a mesma casa.</p>
       </div>
     </div>
+    <div class="cta-row"><a class="cta" href="#falar">Quero marketing com estratégia <span class="harrow">↓</span></a></div>
   </div>
 </section>
 
@@ -626,6 +643,8 @@
     <p class="eyebrow">Sistema Clínica de Referência</p>
     <h2 class="h-lg display">Para isto, há um sistema.</h2>
     <p class="lead">Junta numa só mão o que costuma andar espalhado por vários fornecedores (vídeo e fotografia, redes, anúncios e Google), pensados pela mesma cabeça, para pôr a tua clínica à vista de quem procura na tua zona e transformar esse interesse em pedidos de marcação.</p>
+
+    <figure class="showcase wide"><img src="foto-estrategia.jpg" alt="Janine a pensar a estratégia enquanto a clínica é filmada" style="aspect-ratio:16/10;object-position:center 32%;" loading="lazy"></figure>
 
     <div class="pieces">
       <div class="hbox">
@@ -678,7 +697,6 @@
         <h2 class="h-lg display">Resultados reais, de clínicas reais.</h2>
         <p class="lead">Quando o sistema está a trabalhar, nota-se no sítio que importa: na agenda. Chegam mais pedidos de marcação, das pessoas certas, para as consultas que a tua clínica quer encher.</p>
         <p>Não é teoria nem uma promessa bonita. São mensagens que recebemos de quem já trabalha connosco, no dia em que os anúncios começam a dar frutos.</p>
-        <div class="cta-row" style="justify-content:flex-start;"><a class="cta cta--ghost" href="#falar">Quero isto na minha clínica <span class="harrow">↓</span></a></div>
       </div>
       <aside class="wa-wrap">
         <div class="wa-grid">
@@ -688,6 +706,7 @@
         </div>
       </aside>
     </div>
+    <div class="cta-row"><a class="cta" href="#falar">Quero isto na minha clínica <span class="harrow">↓</span></a></div>
   </div>
 </section>
 
@@ -697,6 +716,9 @@
     <p class="eyebrow">Como trabalhamos</p>
     <h2 class="h-lg display">Cada passo prepara o seguinte.</h2>
     <p class="lead" style="max-width:62ch;">Na saúde, publicar por publicar não põe ninguém no mapa. O que funciona é cada peça encaixar na anterior: tudo começa num diagnóstico da tua clínica e fecha na análise, que decide o passo seguinte.</p>
+
+    <figure class="showcase" style="max-width:880px;"><img src="foto-conteudo.jpg" alt="Profissional de saúde a gravar conteúdo para a clínica" style="aspect-ratio:16/9;object-position:center 26%;" loading="lazy"></figure>
+
     <div class="flow2">
       <div class="fcard">
         <span class="fi"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="17" cy="17" r="10"/><path d="M24.5,24.5 L33,33"/></svg></span>
