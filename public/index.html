@@ -484,8 +484,23 @@
   window.dataLayer=window.dataLayer||[];
   function gtag(){dataLayer.push(arguments);}
   gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
-  (function(){try{var c=JSON.parse(localStorage.getItem('bamboo_consent')||'null');if(c){gtag('consent','update',{analytics_storage:c.statistics?'granted':'denied',ad_storage:c.marketing?'granted':'denied',ad_user_data:c.marketing?'granted':'denied',ad_personalization:c.marketing?'granted':'denied'});}}catch(e){}})();
-  /* Google Tag Manager: quando tiveres o contentor, poe o ID aqui, ex: 'GTM-XXXXXXX' */
+  /* IDs de medicao: ligados ao consentimento do banner */
+  var BAMBOO_CLARITY_ID='yx0u2xnkld';
+  var BAMBOO_GA4_ID='';
+  var BAMBOO_PIXEL_ID='';
+  window.__bbLoaded={clarity:false,ga:false,pixel:false};
+  window.bambooLoadAnalytics=function(c){
+    if(!c)return;
+    if(c.statistics){
+      if(BAMBOO_CLARITY_ID&&!window.__bbLoaded.clarity){window.__bbLoaded.clarity=true;(function(cl,l,a,r,i,t,y){cl[a]=cl[a]||function(){(cl[a].q=cl[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",BAMBOO_CLARITY_ID);}
+      if(BAMBOO_GA4_ID&&!window.__bbLoaded.ga){window.__bbLoaded.ga=true;var gs=document.createElement('script');gs.async=true;gs.src='https://www.googletagmanager.com/gtag/js?id='+BAMBOO_GA4_ID;document.head.appendChild(gs);gtag('js',new Date());gtag('config',BAMBOO_GA4_ID);}
+    }
+    if(c.marketing){
+      if(BAMBOO_PIXEL_ID&&!window.__bbLoaded.pixel){window.__bbLoaded.pixel=true;!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',BAMBOO_PIXEL_ID);fbq('track','PageView');}
+    }
+  };
+  (function(){try{var c=JSON.parse(localStorage.getItem('bamboo_consent')||'null');if(c){gtag('consent','update',{analytics_storage:c.statistics?'granted':'denied',ad_storage:c.marketing?'granted':'denied',ad_user_data:c.marketing?'granted':'denied',ad_personalization:c.marketing?'granted':'denied'});window.bambooLoadAnalytics(c);}}catch(e){}})();
+  /* Google Tag Manager: alternativa opcional; se usares GTM, poe o ID aqui, ex: 'GTM-XXXXXXX' */
   var BAMBOO_GTM_ID='';
   if(BAMBOO_GTM_ID){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',BAMBOO_GTM_ID);}
 </script>
@@ -944,7 +959,7 @@
   var saveBtn=document.getElementById('ck-save');
   var toggle=document.getElementById('ck-prefs-toggle');
   function stored(){try{return JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){return null;}}
-  function apply(c){if(typeof gtag==='function'){gtag('consent','update',{analytics_storage:c.statistics?'granted':'denied',ad_storage:c.marketing?'granted':'denied',ad_user_data:c.marketing?'granted':'denied',ad_personalization:c.marketing?'granted':'denied'});}}
+  function apply(c){if(typeof gtag==='function'){gtag('consent','update',{analytics_storage:c.statistics?'granted':'denied',ad_storage:c.marketing?'granted':'denied',ad_user_data:c.marketing?'granted':'denied',ad_personalization:c.marketing?'granted':'denied'});}if(window.bambooLoadAnalytics){window.bambooLoadAnalytics(c);}}
   function save(c){c.necessary=true;c.ts=Date.now();try{localStorage.setItem(KEY,JSON.stringify(c));}catch(e){}apply(c);banner.hidden=true;}
   function openPrefs(){prefs.hidden=false;saveBtn.hidden=false;toggle.hidden=true;}
   function show(){var c=stored();if(c){stat.checked=!!c.statistics;mkt.checked=!!c.marketing;}banner.hidden=false;}
