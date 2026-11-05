@@ -595,6 +595,9 @@
   .breakdown li:last-child{border-bottom:0;padding-bottom:0;}
   .breakdown li b{color:var(--navy-ink);font-variant-numeric:tabular-nums;white-space:nowrap;}
   .inv-note{margin-top:1.4rem;font-size:.86rem;color:var(--fg-soft);font-style:italic;max-width:62ch;}
+  [hidden]{display:none !important;}
+  .expired-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--cru);text-align:center;padding:2rem;}
+  .expired-screen img{height:38px;width:auto;margin:0 auto 1.4rem;display:block;}
 </style>
 </head>
 
@@ -819,6 +822,7 @@
     </div>
 
     <p class="inv-note">O investimento em anúncios (Meta) é pago directamente à plataforma e não está incluído nos honorários acima.</p>
+    <p class="inv-note" style="margin-top:.5rem;">Proposta válida até <b id="validade" style="color:var(--navy-ink);font-style:normal;">—</b>.</p>
   </div>
 </section>
 
@@ -830,8 +834,35 @@
   <small class="foot-copy">&copy; <span id="yr">2026</span> Bamboo Digital. Proposta de investimento.</small>
 </footer>
 
+<!-- ECRA DE PROPOSTA EXPIRADA (aparece sozinho depois da validade) -->
+<div id="proposta-expirada" class="expired-screen" hidden>
+  <div class="wrap stack" style="max-width:620px;">
+    <img src="logo.png" alt="Bamboo Digital" width="700" height="250">
+    <h1 class="h-lg display">Esta proposta expirou.</h1>
+    <p class="lead" style="margin-inline:auto;">O prazo de validade desta proposta terminou. Se ainda fizer sentido avançarmos, é só falares comigo que preparo-te uma proposta actualizada.</p>
+    <p style="margin-top:1.2rem;"><a class="cta" href="mailto:info@bamboo-digital.pt">Falar com a Bamboo</a></p>
+  </div>
+</div>
+
 <script>
-  (function(){var yr=document.getElementById('yr');if(yr){yr.textContent=new Date().getFullYear();}})();
+  /* ================================================================
+     VALIDADE DA PROPOSTA (15 dias): muda SÓ a data abaixo (AAAA-MM-DD).
+     = data de envio + 15 dias. Ate la mostra "valida ate ...";
+     depois troca a pagina toda pelo ecra "Esta proposta expirou".
+     ================================================================ */
+  var PROPOSTA_VALIDA_ATE = '2026-11-12';
+  (function(){
+    var yr=document.getElementById('yr'); if(yr){ yr.textContent=new Date().getFullYear(); }
+    function fmt(iso){ var p=String(iso).split('-'); return p.length===3 ? p[2]+'/'+p[1]+'/'+p[0] : iso; }
+    var v=document.getElementById('validade'); if(v){ v.textContent=fmt(PROPOSTA_VALIDA_ATE); }
+    try{
+      var fim=new Date(PROPOSTA_VALIDA_ATE+'T23:59:59');
+      if(!isNaN(fim.getTime()) && new Date() > fim){
+        Array.prototype.forEach.call(document.querySelectorAll('header, section, footer'), function(el){ el.style.display='none'; });
+        var ov=document.getElementById('proposta-expirada'); if(ov){ ov.hidden=false; }
+      }
+    }catch(e){}
+  })();
 </script>
 
 </body>
